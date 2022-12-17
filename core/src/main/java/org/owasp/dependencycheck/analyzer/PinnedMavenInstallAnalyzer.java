@@ -119,7 +119,7 @@ public class PinnedMavenInstallAnalyzer extends AbstractFileTypeAnalyzer {
 
         final DependencyTree tree;
         try {
-            final InstallFile installFile = INSTALL_FILE_READER.readValue(dependencyFile);
+            final InstallFile installFile = installFileReader.readValue(dependencyFile);
             tree = installFile.getDependencyTree();
         } catch (IOException e) {
             return;
@@ -314,14 +314,17 @@ public class PinnedMavenInstallAnalyzer extends AbstractFileTypeAnalyzer {
         }
     }
 
+    @Override
+    public void initialize(Settings settings) {
+        super.initialize(settings);
+        final ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        installFileReader = mapper.readerFor(InstallFile.class);
+    }
+
     /**
      * A reusable reader for {@link InstallFile}.
      */
-    private static final ObjectReader INSTALL_FILE_READER;
+    private static ObjectReader installFileReader;
 
-    static {
-        final ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        INSTALL_FILE_READER = mapper.readerFor(InstallFile.class);
-    }
 }

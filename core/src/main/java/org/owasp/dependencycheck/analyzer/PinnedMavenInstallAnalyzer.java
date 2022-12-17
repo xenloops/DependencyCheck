@@ -325,6 +325,6 @@ public class PinnedMavenInstallAnalyzer extends AbstractFileTypeAnalyzer {
     /**
      * A reusable reader for {@link InstallFile}.
      */
-    private static ObjectReader installFileReader;
+    private ObjectReader installFileReader;
 
 }

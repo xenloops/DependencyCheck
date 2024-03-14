@@ -466,7 +466,6 @@ Copyright (c) 2012 Jeremy Long. All Rights Reserved.
                     <scope>test</scope>
                     <optional>true</optional>
                 </dependency>
-                <!--
                 <dependency>
                     <groupId>io.github.faob-dev</groupId>
                     <artifactId>aar</artifactId>
@@ -475,6 +474,7 @@ Copyright (c) 2012 Jeremy Long. All Rights Reserved.
                     <scope>test</scope>
                     <optional>true</optional>
                 </dependency>
+            <!--
                 <dependency>
                     <groupId>org.jslipc</groupId>
                     <artifactId>jslipc</artifactId>

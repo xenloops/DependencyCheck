@@ -460,6 +460,14 @@ Copyright (c) 2012 Jeremy Long. All Rights Reserved.
                 <!-- The following dependencies are only used during testing
                 and must not be converted to a properties based version number -->
                 <dependency>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>2.5</version>
+                    <scope>test</scope>
+                    <optional>true</optional>
+                </dependency>
+                <!--
+                <dependency>
                     <groupId>io.github.faob-dev</groupId>
                     <artifactId>aar</artifactId>
                     <version>1.0.0</version>
@@ -609,7 +617,8 @@ Copyright (c) 2012 Jeremy Long. All Rights Reserved.
                     <version>1.2.1</version>
                     <scope>test</scope>
                     <optional>true</optional>
-                </dependency>
+                </dependency>t
+                -->
             </dependencies>
         </profile>
     </profiles>
